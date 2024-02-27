@@ -25,14 +25,14 @@ type ColumnState = {
   updateTaskType: (taskId: string, taskType: string) => void;
 };
 
-const useEventStore = create<EventState>((set) => ({
+const useEventStore = create<EventState>((set, get) => ({
   events: [],
   eventName: "",
   selectedEventId: -1,
   changeEventName: (name) => set(() => ({ eventName: name })),
   fetchEvents: async () => {
     const eventData = (await axios.get("/api/events")).data;
-    set(() => ({ selectedEventId: eventData[0].ID }));
+
     set(() => ({ events: eventData }));
   },
   changeSelectedEventId: (eventId) => {
@@ -78,7 +78,7 @@ const useColumnStore = create<ColumnState>((set, get) => ({
     });
   },
   updateTaskType: async (taskId, taskType) => {
-    await axios.patch(`/api/tasks/${taskId}`, { taskType });
+    await axios.patch(`/api/tasks/${taskId}`, { task_type: taskType });
 
     get().setColumn(useEventStore.getState().selectedEventId);
   },

@@ -26,7 +26,7 @@ export function TaskFormPopup() {
       return;
     }
 
-    await axios.post("/api/tasks", { title, eventId: selectedEventId });
+    await axios.post("/api/tasks", { title, event_id: selectedEventId });
     fetchColumnData(selectedEventId);
     setTitle("");
   };

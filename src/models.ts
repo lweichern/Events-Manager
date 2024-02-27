@@ -1,14 +1,15 @@
 export type Event = {
-  CreatedAt: string;
-  ID: number;
-  UpdatedAt: string;
+  created_at: string;
+  id: number;
+  updated_at: string;
   title: string;
+  isSelected: boolean;
 };
 
 export type Task = {
-  CreatedAt: string;
-  ID: number;
-  UpdatedAt: string;
+  created_at: string;
+  id: number;
+  updated_at: string;
   title: string;
   eventId: number;
   isDone: boolean;

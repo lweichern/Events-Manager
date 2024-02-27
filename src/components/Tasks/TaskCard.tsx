@@ -2,7 +2,7 @@ import { Task } from "../../models";
 
 function TaskCard({ task }: { task: Task }) {
   const dragStartHandler = (e: React.DragEvent<HTMLDivElement>) => {
-    e.dataTransfer.setData("taskId", `${task.ID}`);
+    e.dataTransfer.setData("taskId", `${task.id}`);
     e.dataTransfer.setData("taskType", task.taskType);
   };
   return (

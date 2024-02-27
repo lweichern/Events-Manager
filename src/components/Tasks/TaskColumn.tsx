@@ -56,7 +56,7 @@ function TaskColumn({
 
       <div className="flex flex-col space-y-2 my-2">
         {taskList ? (
-          taskList.map((task) => <TaskCard key={task.ID} task={task} />)
+          taskList.map((task) => <TaskCard key={task.id} task={task} />)
         ) : (
           <p>loading...</p>
         )}

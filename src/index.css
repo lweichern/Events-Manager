@@ -82,3 +82,19 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.bounce-text {
+  animation: bounce ease-in-out 3s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
